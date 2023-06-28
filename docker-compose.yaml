@@ -1,0 +1,19 @@
+version: "3"
+services:
+  dse00-frontend:
+    image: dse00b/dse00-frontend
+    ports:
+      - "3000:3000"
+    networks:
+      - app-network
+
+  dse00-backend:
+    image: dse00b/dse00-backend
+    ports:
+      - "3001:3001"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
